@@ -189,7 +189,7 @@ int XMLDocument_load(XMLDocument* doc, const char* path) {
 				}
 
 				if(strcmp(curr_node->tag, lex)) {
-					fprintf(stderr, "Mismatched tags (%s != %s)", curr_node->tag, lex);
+					fprintf(stderr, "Mismatched tags (%s != %s)\n", curr_node->tag, lex);
 					return FALSE;
 				}
 
