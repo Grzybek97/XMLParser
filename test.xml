@@ -1,6 +1,7 @@
-<root>
+<main>
 	<inner>
 		<more>I'm 14 and this is deep</more>
 	</inner>
 	<another> This is another node</another>
-</root>
+</main>
+<another>This should work too</another>
