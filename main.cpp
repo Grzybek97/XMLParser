@@ -8,13 +8,12 @@ using namespace std;
 int main() {
 	XMLDocument doc;
 	if(XMLDocument_load(&doc, FILE_PATH)) {
-		XMLNode node = *doc.root;
+		XMLNode* more_node = XMLNode_child(XMLNode_child(doc.root, 0), 0);
+		printf("%s: %s\n", more_node->tag, more_node->inner_text);
 
-		printf("Attributes:\n");
-		for(int i = 0; i < node.attributes.size; i++) {
-			XMLAttribute attr = node.attributes.data[i];
-			printf("  %s => \"%s\"\n", attr.key, attr.value);
-		}
+		XMLNode* another_node = XMLNode_child(doc.root, 1);
+		printf("%s: %s\n", another_node->tag, another_node->inner_text);
+
 		XMLDocument_free(&doc);
 	}
 
